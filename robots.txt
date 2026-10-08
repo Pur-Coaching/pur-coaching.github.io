@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pur-coaching.github.io/sitemap.xml
