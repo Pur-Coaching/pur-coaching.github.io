@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pur Coaching, coach sportif à Huy : analyse corporelle Tanita, plan d'entraînement sur mesure, perte de poids, remise en forme et préparation marathon.">
+<meta name="description" content="Pur Coaching, coach sportif à Huy et à distance : analyse Tanita, plan d'entraînement sur mesure, perte de poids, remise en forme et préparation marathon.">
 <link rel="canonical" href="https://pur-coaching.github.io/">
 <link rel="icon" href="images/logo.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_BE">
 <meta property="og:site_name" content="Pur Coaching">
 <meta property="og:title" content="Pur Coaching · Coach sportif à Huy">
-<meta property="og:description" content="Analyse corporelle Tanita, plans d'entraînement sur mesure et préparation marathon, avec Simon à Huy.">
+<meta property="og:description" content="Analyse corporelle Tanita, plans d'entraînement sur mesure et préparation marathon, avec Simon à Huy ou à distance.">
 <meta property="og:url" content="https://pur-coaching.github.io/">
 <meta property="og:image" content="https://pur-coaching.github.io/images/partage.jpg">
 <meta property="og:image:width" content="1200">
@@ -38,7 +38,7 @@
     "addressRegion": "Liège",
     "addressCountry": "BE"
   },
-  "areaServed": { "@type": "City", "name": "Huy" },
+  "areaServed": [{ "@type": "City", "name": "Huy" }, { "@type": "Country", "name": "Belgique" }, { "@type": "Country", "name": "France" }],
   "priceRange": "15 € - 750 €",
   "currenciesAccepted": "EUR",
   "paymentAccepted": "Virement bancaire, espèces",
@@ -59,7 +59,13 @@
       { "@type": "Offer", "price": "750", "priceCurrency": "EUR",
         "itemOffered": { "@type": "Service", "name": "PUR TRACK, 36 séances" } },
       { "@type": "Offer", "price": "15", "priceCurrency": "EUR",
-        "itemOffered": { "@type": "Service", "name": "Analyse Tanita seule" } }
+        "itemOffered": { "@type": "Service", "name": "Analyse Tanita seule" } },
+      { "@type": "Offer", "price": "69", "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "69", "priceCurrency": "EUR", "unitCode": "MON", "unitText": "mois" },
+        "itemOffered": { "@type": "Service", "name": "PUR ONLINE", "description": "Coaching 100 % à distance : appel vidéo de bilan, plan personnalisé ajusté toutes les 4 semaines, bilan chaque semaine, correction de la technique en vidéo et 1 visio par mois." } },
+      { "@type": "Offer", "price": "109", "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "109", "priceCurrency": "EUR", "unitCode": "MON", "unitText": "mois" },
+        "itemOffered": { "@type": "Service", "name": "PUR ONLINE+", "description": "Coaching 100 % à distance avec suivi renforcé : plan ajusté chaque semaine, réponse sous 24 h en semaine, 2 visios par mois et préparation du semi-marathon ou du marathon." } }
     ]
   }
 }
@@ -164,6 +170,17 @@ ul.check li::before{content:"";position:absolute;left:0;top:.5em;width:.75rem;he
 .offer .btn{margin-top:auto}
 .extra{margin-top:1.5rem;display:flex;gap:1.5rem;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
 .extra b{color:var(--ink)}
+.remote{margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--line)}
+.remote h3.remote-title{font-family:var(--display);font-size:clamp(1.5rem,3.2vw,2rem);font-weight:800}
+.offers.duo{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:2rem}
+.offer .terms{font-size:.9rem;color:var(--muted);margin-top:-.4rem}
+.offer.plus{border:2px solid var(--accent)}
+.offer.plus .kind{color:var(--accent)}
+.notes{margin-top:1.75rem;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.4rem 1.5rem}
+.notes h4{margin:0 0 .6rem;font-size:1rem;font-weight:800}
+.notes ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:.45rem;color:var(--muted);font-size:.95rem}
+.hero .far{font-size:.98rem;color:var(--muted)}
+.hero .far a{color:var(--accent);font-weight:700}
 
 /* Étapes */
 ol.steps{list-style:none;padding:0;margin:2.5rem 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem;counter-reset:s}
@@ -196,7 +213,7 @@ footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap
   .goal-list{grid-template-columns:repeat(2,minmax(0,1fr))}
   .quotes{grid-template-columns:1fr}
   .hero .wrap,.two,.coach{grid-template-columns:1fr}
-  .offers{grid-template-columns:1fr}
+  .offers,.offers.duo{grid-template-columns:1fr}
   ol.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
   section{padding-block:3.25rem}
 }
@@ -211,6 +228,7 @@ footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap
     <a class="brand" href="#"><img src="images/logo.png" alt="Logo Pur Coaching" width="46" height="46"><span>PUR COACHING</span></a>
     <nav aria-label="Menu">
       <a href="#offres">Formules</a>
+      <a href="#distance">À distance</a>
       <a href="#methode">Méthode</a>
       <a href="#avis">Avis</a>
       <a href="#coach">Le coach</a>
@@ -230,6 +248,7 @@ footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap
         <a class="btn" href="#offres">Voir les formules</a>
         <a class="btn ghost" href="#contact">Me contacter</a>
       </div>
+      <p class="far">Tu n'habites pas près de Huy ? <a href="#distance">Découvre le coaching à distance</a></p>
       <div class="facts">
         <span><b>Tanita</b>analyse corporelle 8 électrodes</span>
         <span><b>100&nbsp;%</b>plans personnalisés</span>
@@ -332,9 +351,59 @@ footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap
     </div>
     <div class="extra">
       <span><b>Analyse Tanita seule :</b> 15 €</span>
-      <span><b>Lieu :</b> Huy, pour les séances en présentiel</span>
+      <span><b>Lieu :</b> Huy en présentiel, partout à distance</span>
       <span><b>Horaires :</b> variables selon mes disponibilités, on fixe ensemble</span>
       <span><b>Paiement :</b> par virement, ou en liquide pour le présentiel</span>
+    </div>
+
+    <div class="remote" id="distance">
+      <div class="stack">
+        <span class="eyebrow">100&nbsp;% à distance</span>
+        <h3 class="remote-title">Tu n'habites pas près de Huy&nbsp;?</h3>
+        <p class="lead">Je te coache à distance, ailleurs en Belgique, en France ou dans un autre pays : bilan en visio, plan sur mesure, bilan chaque semaine et correction de ta technique en vidéo.</p>
+      </div>
+      <div class="offers duo">
+        <article class="offer">
+          <span class="kind">À distance · en autonomie</span>
+          <h3>PUR ONLINE</h3>
+          <div class="price">69 € <small>/ mois</small></div>
+          <p class="terms">3 mois minimum, puis mois par mois</p>
+          <ul>
+            <li>Bilan santé et appel vidéo gratuit avant de commencer</li>
+            <li>Plan 100&nbsp;% personnalisé, ajusté toutes les 4 semaines</li>
+            <li>Ton bilan chaque semaine, ma réponse sous 48 h en semaine</li>
+            <li>Correction de ta technique en vidéo</li>
+            <li>1 visio de suivi par mois + tes questions sur WhatsApp</li>
+            <li>Tests de forme maison toutes les 4 semaines</li>
+          </ul>
+          <a class="btn ghost" href="#contact">Réserver PUR ONLINE</a>
+        </article>
+        <article class="offer plus">
+          <span class="kind">À distance · suivi renforcé</span>
+          <h3>PUR ONLINE+</h3>
+          <div class="price">109 € <small>/ mois</small></div>
+          <p class="terms">3 mois minimum, puis mois par mois</p>
+          <ul>
+            <li>Tout PUR ONLINE, avec un suivi plus serré</li>
+            <li><strong>Plan ajusté chaque semaine selon ton bilan</strong></li>
+            <li>Ma réponse sous 24 h en semaine, par écrit ou en vocal</li>
+            <li><strong>2 visios par mois, dont 1 séance de technique en direct</strong></li>
+            <li>Jusqu'à 2 vidéos de technique corrigées par semaine</li>
+            <li>Semi ou marathon : allures et stratégie de course</li>
+          </ul>
+          <a class="btn" href="#contact">Réserver PUR ONLINE+</a>
+        </article>
+      </div>
+      <div class="notes">
+        <h4>Bon à savoir avant de choisir</h4>
+        <ul>
+          <li>Avant de commencer : questionnaire santé et appel vidéo de bilan. Tu paies seulement ensuite, par virement, avant chaque mois de suivi.</li>
+          <li>Pas de Tanita à distance : on suit des mesures simples que tu prends chez toi. Si tu passes par Huy, tu peux ajouter une analyse Tanita (15 €) ou une séance sur place (35 €).</li>
+          <li>Tu dois pouvoir faire une visio et filmer tes exercices avec ton téléphone. Rien de payant : WhatsApp, Google Meet et un carnet en ligne gratuits, avec un compte Google gratuit.</li>
+          <li>Pas adapté si tu es enceinte ou mineur, si tu as une maladie du cœur, un pacemaker ou un défibrillateur, si tu fais des malaises à l'effort, si tu as une maladie non stabilisée qui peut te faire perdre connaissance, ou une douleur vive ou une blessure récente ou en cours de soin. Tension traitée, accouchement il y a moins d'un an, maladie chronique, plus de 65 ans sans activité : il faut d'abord l'accord écrit de ton médecin (ou de ta sage-femme après un accouchement).</li>
+          <li>Ce coaching ne remplace pas un avis médical. En cas d'urgence, appelle le 112 (ou le numéro d'urgence de ton pays), pas ton coach. Je réponds du lundi au vendredi, et je te préviens à l'avance si mes délais changent pendant mes examens.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -347,7 +416,7 @@ footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap
     </div>
     <ol class="steps">
       <li><h3>Tu m'écris</h3><p>Sur Instagram ou par e-mail, avec ton objectif et la formule qui t'intéresse.</p></li>
-      <li><h3>On fait le bilan</h3><p>Anamnèse complète et analyse Tanita pour savoir d'où tu pars.</p></li>
+      <li><h3>On fait le bilan</h3><p>Anamnèse complète, puis analyse Tanita à Huy, ou appel vidéo de bilan si tu es à distance.</p></li>
       <li><h3>Tu reçois ton plan</h3><p>Un entraînement construit pour toi, avec chaque exercice expliqué.</p></li>
       <li><h3>On mesure et on ajuste</h3><p>Nouvelles mesures, nouveaux objectifs : ton plan évolue avec toi.</p></li>
     </ol>
@@ -406,9 +475,12 @@ footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap
     <div style="margin-top:1.5rem">
       <details><summary>C'est quoi, une analyse Tanita ?</summary><p>C'est une balance Tanita à 8 électrodes (modèle RD-545 HR) qui estime ta composition corporelle en quelques secondes : masse grasse, masse musculaire, eau, graisse viscérale et métabolisme. C'est indolore, et bien plus parlant que le poids seul. Elle n'est pas faite pour les personnes qui ont un pacemaker ou un autre implant électronique, ni pendant la grossesse : dis-le-moi avant l'analyse.</p></details>
       <details><summary>Je suis débutant, c'est pour moi ?</summary><p>Oui. Le plan part de ton niveau réel, même si tu n'as jamais fait de sport.</p></details>
-      <details><summary>Quelle formule choisir ?</summary><p>PUR HEALTH pour un bilan et un plan à suivre seul. PUR GOLD pour un suivi complet sur plusieurs mois. PUR TRACK si tu veux t'entraîner avec moi en présentiel.</p></details>
-      <details><summary>Où ont lieu les séances ?</summary><p>Les séances en présentiel et les analyses Tanita ont lieu à Huy. Entre deux rendez-vous, on garde le contact par Instagram ou par e-mail.</p></details>
-      <details><summary>Comment je paie ?</summary><p>Par virement bancaire, ou en liquide pour les séances en présentiel.</p></details>
+      <details><summary>Quelle formule choisir ?</summary><p>PUR HEALTH pour un bilan et un plan à suivre seul. PUR GOLD pour un suivi complet sur plusieurs mois. PUR TRACK si tu veux t'entraîner avec moi en présentiel. Tu habites loin de Huy ? PUR ONLINE ou PUR ONLINE+, tout à distance.</p></details>
+      <details><summary>Où ont lieu les séances ?</summary><p>Les séances en présentiel et les analyses Tanita ont lieu à Huy. Entre deux rendez-vous, on garde le contact par Instagram ou par e-mail. Avec PUR ONLINE et PUR ONLINE+, tout se fait à distance : visios, WhatsApp et e-mail.</p></details>
+      <details><summary>J'habite loin de Huy, ou à l'étranger : c'est possible ?</summary><p>Oui. Avec PUR ONLINE ou PUR ONLINE+, tout se fait à distance : un appel vidéo de bilan, ton plan dans un carnet en ligne, ton bilan chaque semaine, WhatsApp et des visios. Pas besoin de montre : ton téléphone suffit. Pas de Tanita à distance : on suit des mesures simples que tu prends chez toi. Si tu passes un jour par Huy, tu peux ajouter une analyse Tanita (15 €).</p></details>
+      <details><summary>Sans me voir, comment tu sais si je fais bien ?</summary><p>Au départ, on vérifie tes exercices ensemble en visio. Ensuite, tu m'envoies une courte vidéo de chaque nouvel exercice, et je te réponds avec une correction précise. Tu augmentes une charge seulement quand j'ai validé ta vidéo. Ton bilan de la semaine et ton carnet me disent le reste.</p></details>
+      <details><summary>PUR ONLINE ou PUR ONLINE+ : laquelle choisir ?</summary><p>PUR ONLINE si tu es plutôt autonome : ton plan évolue toutes les 4 semaines, je réponds à ton bilan sous 48 h en semaine, et on fait une visio par mois. PUR ONLINE+ si tu veux un suivi de près, ou si tu prépares un semi ou un marathon : plan ajusté chaque semaine, réponse sous 24 h et 2 visios par mois. Les deux durent 3 mois au départ, puis tu continues mois par mois si tu veux.</p></details>
+      <details><summary>Comment je paie ?</summary><p>Par virement bancaire, ou en liquide pour les séances en présentiel. À distance, par virement avant chaque mois de suivi, seulement après ton bilan santé.</p></details>
       <details><summary>Quels sont les horaires ?</summary><p>Ils varient selon mes disponibilités. Écris-moi et on trouve un créneau ensemble.</p></details>
     </div>
   </div>
