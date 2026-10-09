@@ -75,203 +75,380 @@
 {"@context":"https://schema.org","@type":"WebSite","name":"Pur Coaching","alternateName":"PUR COACHING","url":"https://pur-coaching.github.io/"}
 </script>
 <title>Pur Coaching · Coach sportif à Huy, analyse Tanita</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Raleway:wght@400;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#132433" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-/* Mise en page : colonne centrée, bandes bleu ciel alternées comme sur la plaquette, rapport Tanita comme élément signature */
+/* Polices hébergées sur le site (licence SIL OFL) : Montserrat pour tout le texte, Cormorant Garamond pour le nom de la marque et le slogan */
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/montserrat-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/montserrat-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/cormorant-600-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/cormorant-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:600;font-display:swap;src:url(fonts/cormorant-600-italique-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:600;font-display:swap;src:url(fonts/cormorant-600-italique-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* Police de secours aux mêmes proportions, pour que le texte ne saute pas pendant le chargement */
+@font-face{font-family:'Montserrat secours';src:local("Arial");size-adjust:113%;ascent-override:85%;descent-override:22%;line-gap-override:0%}
+
 :root{
-  --bg:#F4FAFD; --surface:#FFFFFF; --ink:#12304F; --muted:#4F6A85; --line:#D3E4EF;
-  --accent:#2B5A96; --accent-ink:#FFFFFF; --sky:#DCEFF8; --gold:#B08A22; --gold-bg:#F7EDCF;
-  --display:"Cinzel","Times New Roman",Georgia,serif;
-  --body:"Raleway","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --bg:#F4FAFD; --surface:#FFFFFF; --ink:#12304F; --ink-soft:#2C4866; --muted:#45607B; --line:#D3E4EF;
+  --accent:#2B5A96; --accent-hover:#224A7C; --accent-ink:#FFFFFF; --sky:#DCEFF8; --ghost-hover:#DCEFF8;
+  --gold:#B08A22; --gold-hover:#9C7A1D; --gold-bg:#FBF4DF; --gold-grad:linear-gradient(180deg,#FBF4DF 0,#FFFFFF 140px);
+  --cta-bg:#12304F; --cta-ink:#FFFFFF; --cta-soft:#DCEFF8; --light-btn:#FFFFFF; --light-btn-hover:#DCEFF8;
+  --shadow:0 12px 32px -20px rgba(18,48,79,.35); --menu-shadow:0 16px 32px -16px rgba(18,48,79,.3);
+  --sans:"Montserrat","Montserrat secours",Arial,Helvetica,sans-serif;
+  --serif:"Cormorant Garamond",Garamond,Georgia,"Times New Roman",serif;
+  --check:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --chevron:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 7.5l5 5 5-5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --info:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='8.2' fill='none' stroke='%23000' stroke-width='1.8'/%3E%3Cpath d='M10 9v5' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='10' cy='6.2' r='1.2'/%3E%3C/svg%3E");
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0C1824; --surface:#132433; --ink:#E6F0F7; --muted:#9DB3C7; --line:#223A4E;
-  --accent:#7FB0E6; --accent-ink:#0C1824; --sky:#10283B; --gold:#D9B651; --gold-bg:#3A3015; color-scheme:dark}}
+  --bg:#0C1824; --surface:#132433; --ink:#E6F0F7; --ink-soft:#C3D3E0; --muted:#9DB3C7; --line:#24405A;
+  --accent:#7FB0E6; --accent-hover:#99C1EC; --accent-ink:#0C1824; --sky:#112A40; --ghost-hover:rgba(127,176,230,.12);
+  --gold:#D9B651; --gold-hover:#E3C36A; --gold-bg:transparent; --gold-grad:none;
+  --cta-bg:#17395A; --cta-soft:#C3D3E0; --light-btn:#E6F0F7; --light-btn-hover:#DCEFF8;
+  --shadow:none; --menu-shadow:0 16px 32px -16px rgba(0,0,0,.6); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0C1824; --surface:#132433; --ink:#E6F0F7; --muted:#9DB3C7; --line:#223A4E;
-  --accent:#7FB0E6; --accent-ink:#0C1824; --sky:#10283B; --gold:#D9B651; --gold-bg:#3A3015; color-scheme:dark}
+  --bg:#0C1824; --surface:#132433; --ink:#E6F0F7; --ink-soft:#C3D3E0; --muted:#9DB3C7; --line:#24405A;
+  --accent:#7FB0E6; --accent-hover:#99C1EC; --accent-ink:#0C1824; --sky:#112A40; --ghost-hover:rgba(127,176,230,.12);
+  --gold:#D9B651; --gold-hover:#E3C36A; --gold-bg:transparent; --gold-grad:none;
+  --cta-bg:#17395A; --cta-soft:#C3D3E0; --light-btn:#E6F0F7; --light-btn-hover:#DCEFF8;
+  --shadow:none; --menu-shadow:0 16px 32px -16px rgba(0,0,0,.6); color-scheme:dark}
+
+/* Base (téléphone d'abord) */
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65;margin:0}
-.wrap{max-width:68rem;margin:0 auto;padding-inline:1.25rem}
-section{padding-block:4.5rem}
-h1,h2,h3{line-height:1.12;text-wrap:balance;margin:0}
-h1{font-family:var(--display);font-size:clamp(2.4rem,6.5vw,4.2rem);font-weight:800;letter-spacing:.02em}
-h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800}
-h3{font-family:var(--body);font-size:1.3rem;font-weight:800}
-h1 .kicker{display:block;font-family:var(--body);font-size:clamp(1.05rem,2.4vw,1.35rem);font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
-p{margin:0;max-width:65ch}
-.eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-.lead{font-size:1.18rem;color:var(--muted)}
-.stack{display:flex;flex-direction:column;gap:1rem}
-.btn{display:inline-block;font-weight:700;text-decoration:none;padding:.85rem 1.4rem;border-radius:999px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);text-align:center}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.6;margin:0;font-variant-numeric:lining-nums}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:68rem;margin:0 auto;padding-inline:20px}
+section{padding-block:48px}
+section[id],#distance{scroll-margin-top:72px}
+h1,h2,h3,h4{margin:0;text-wrap:balance;font-weight:700}
+p{margin:0;max-width:65ch;text-wrap:pretty}
+li{text-wrap:pretty}
+strong,b{font-weight:600}
+sup{font-size:.7em;line-height:0}
+.nw{white-space:nowrap}
+a{color:var(--accent)}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+h2{font-size:1.5rem;line-height:1.2;letter-spacing:-.01em}
+.eyebrow{display:block;font-size:.75rem;font-weight:700;line-height:1.3;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.head{margin-bottom:24px}
+.head .lead{margin-top:12px}
+.lead{font-size:1.0625rem;line-height:1.5;color:var(--ink-soft);max-width:36em}
+.small{font-size:.875rem;line-height:1.5;color:var(--muted)}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 24px;border-radius:999px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);font:700 1rem/1.2 var(--sans);text-decoration:none;text-align:center;transition:background-color .15s,border-color .15s,color .15s}
+.btn:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
 .btn.ghost{background:transparent;color:var(--accent)}
+.btn.ghost:hover{background:var(--ghost-hover);border-color:var(--accent)}
 .btn.gold{background:var(--gold);border-color:var(--gold);color:#1B1606}
-.btn:hover{filter:brightness(1.08)}
-a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn.gold:hover{background:var(--gold-hover);border-color:var(--gold-hover)}
+.btn svg{width:20px;height:20px;flex:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
-/* En-tête */
-header.top{border-bottom:1px solid var(--line);background:var(--surface)}
-header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:.7rem;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink)}
-.brand img{width:46px;height:46px}
-.brand span{font-family:var(--display);font-weight:800;font-size:1.25rem;letter-spacing:.08em}
-header.top nav{display:flex;gap:1.25rem;flex-wrap:wrap}
-header.top nav a{color:var(--muted);text-decoration:none;font-weight:600}
-header.top nav a:hover{color:var(--ink)}
+/* En-tête collant et menu */
+header.top{position:sticky;top:0;z-index:10;background:var(--surface);border-bottom:1px solid var(--line)}
+header.top .bar{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);min-width:0}
+.brand img{width:40px;height:40px}
+.brand span{font-family:var(--serif);font-weight:600;font-size:1.125rem;line-height:1;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.nav-d{display:none}
+.menu-m>summary{list-style:none;display:flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:999px;font-weight:600;font-size:.9375rem;color:var(--ink);cursor:pointer;user-select:none}
+.menu-m>summary::-webkit-details-marker{display:none}
+.burger{position:relative;width:18px;height:12px;flex:none}
+.burger::before,.burger::after,.burger i{content:"";position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;transition:transform .15s,opacity .15s}
+.burger::before{top:0}.burger i{top:5px}.burger::after{top:10px}
+.menu-m[open] .burger::before{transform:translateY(5px) rotate(45deg)}
+.menu-m[open] .burger i{opacity:0}
+.menu-m[open] .burger::after{transform:translateY(-5px) rotate(-45deg)}
+.menu-m .panel{position:absolute;top:100%;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--menu-shadow);padding:8px 20px 20px}
+.menu-m .panel a:not(.btn){display:flex;align-items:center;min-height:48px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600;font-size:1.0625rem}
+.menu-m .panel .btn{width:100%;margin-top:16px}
 
-/* Héros */
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
-.hero .cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.5rem}
-.facts{display:flex;gap:1.75rem;flex-wrap:wrap;margin-top:1rem;font-size:.9rem;color:var(--muted)}
-.facts b{display:block;font-family:var(--display);font-size:1.6rem;color:var(--ink)}
-
-/* Objectifs */
-.hero .wrap.goals{display:block;margin-top:3.5rem}
-.goals h2{font-size:clamp(1.5rem,3.2vw,2rem)}
-.goal-list{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}
-.goal-list li{border-left:3px solid var(--gold);padding-left:1rem;display:flex;flex-direction:column;gap:.35rem;min-width:0}
-.goal-list h3{font-size:1.1rem}
-.goal-list p{color:var(--muted);font-size:.98rem}
+/* Haut de page */
+.hero{padding-top:32px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);row-gap:32px}
+h1{font-size:1.875rem;line-height:1.12;letter-spacing:-.015em}
+h1 .kicker{display:block;font-size:.75rem;line-height:1.3;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+h1 .l{display:block}
+.slogan{font-family:var(--serif);font-style:italic;font-weight:600;font-size:1.1875rem;line-height:1.3;color:var(--accent);margin-top:10px}
+.hero .lead{margin-top:16px}
+.cta{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.far{font-size:.9375rem;color:var(--ink-soft);margin-top:16px}
+.far a{font-weight:600;text-decoration-thickness:1px;text-underline-offset:3px}
+.facts{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.facts span{display:grid;grid-template-columns:112px 1fr;align-items:baseline;column-gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.875rem;line-height:1.4;color:var(--muted)}
+.facts b{font-size:1.125rem;font-weight:700;line-height:1.2;color:var(--ink)}
 
 /* Rapport Tanita */
-.report{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.25rem;min-width:0;box-shadow:0 18px 40px -26px rgba(18,48,79,.45)}
-.report header{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;border-bottom:2px solid var(--accent);padding-bottom:.5rem}
-.report header strong{font-weight:800}
-.report .tag{font-family:var(--mono);font-size:.72rem;color:var(--gold);text-transform:uppercase;letter-spacing:.08em}
-.table-scroll{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
-th,td{text-align:left;padding:.55rem .4rem;border-bottom:1px solid var(--line);white-space:nowrap}
-td.n{font-family:var(--mono);font-size:.9rem;text-align:right}
-td.d{font-family:var(--mono);font-size:.8rem;color:var(--accent);text-align:right}
-.report footer{font-size:.85rem;color:var(--muted);margin-top:.75rem}
+.report{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0;box-shadow:var(--shadow)}
+.report header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:10px;border-bottom:2px solid var(--accent)}
+.report header strong{font-size:.9375rem;font-weight:700}
+.report .tag{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--sky);padding:3px 8px;border-radius:999px;white-space:nowrap}
+.report table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums lining-nums}
+.report td{padding:10px 0;border-bottom:1px solid var(--line);font-size:.9375rem;line-height:1.35}
+.report td.n{font-weight:600;text-align:right;white-space:nowrap}
+.report td.d{font-size:.8125rem;font-weight:600;color:var(--accent);text-align:right;white-space:nowrap}
+.report footer{font-size:.875rem;line-height:1.5;color:var(--muted);margin-top:12px}
+@media (max-width:599px){
+  .report table,.report tbody{display:block}
+  .report tr{display:grid;grid-template-columns:1fr auto;column-gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+  .report td{border:0;padding:0;white-space:normal}
+  .report td:first-child{grid-row:1/3;align-self:center}
+}
 
-/* Bandes */
+/* Objectifs */
+.goals{margin-top:48px}
+.goals h2{margin-bottom:24px}
+.goal-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+.goal-list li{border-left:2px solid var(--accent);padding-left:14px;min-width:0}
+.goal-list h3{font-size:1.0625rem;line-height:1.3;margin-bottom:6px}
+.goal-list p{font-size:.9375rem;line-height:1.55;color:var(--ink-soft)}
+
+/* Bandes et listes à gouttes */
 .band{background:var(--sky)}
-.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem}
-ul.check{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.7rem}
-ul.check li{padding-left:1.7rem;position:relative}
-ul.check li::before{content:"";position:absolute;left:0;top:.5em;width:.75rem;height:.75rem;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--accent)}
+.two{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+.two .head{margin-bottom:0}
+ul.check{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+ul.check li{position:relative;padding-left:24px;line-height:1.55}
+ul.check li::before{content:"";position:absolute;left:1px;top:.55em;width:10px;height:10px;border-radius:50% 50% 50% 0;transform:rotate(135deg);background:var(--accent)}
 
-/* Offres */
-.offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2.5rem;align-items:start}
-.offer{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-width:0}
-.offer.star{border:2px solid var(--gold);background:linear-gradient(var(--gold-bg),var(--surface) 40%)}
-.offer .kind{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.offer.star .kind{color:var(--gold)}
-.offer h3{font-family:var(--display);font-size:1.5rem;letter-spacing:.04em}
-.price{font-family:var(--display);font-size:2.4rem;font-weight:800;line-height:1}
-.price small{font-family:var(--body);font-size:1rem;font-weight:400;color:var(--muted)}
-.offer ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:.35rem}
-.rates{list-style:none;padding:0!important;font-variant-numeric:tabular-nums}
-.rates li{display:flex;justify-content:space-between;gap:.5rem;border-bottom:1px dashed var(--line);padding-bottom:.35rem}
-.rates b{font-family:var(--mono);font-weight:500}
-.offer .btn{margin-top:auto}
-.extra{margin-top:1.5rem;display:flex;gap:1.5rem;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
-.extra b{color:var(--ink)}
-.remote{margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--line)}
-.remote h3.remote-title{font-family:var(--display);font-size:clamp(1.5rem,3.2vw,2rem);font-weight:800}
-.offers.duo{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:2rem}
-.offer .terms{font-size:.9rem;color:var(--muted);margin-top:-.4rem}
+/* Formules */
+.offers{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-items:stretch}
+.offer{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;min-width:0}
+.offer .kind{align-self:flex-start;font-size:.75rem;font-weight:700;line-height:1.3;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding:4px 0;margin-bottom:6px}
+.offer .kind.badge{background:var(--gold);color:#1B1606;letter-spacing:.08em;padding:4px 10px;border-radius:999px}
+.offer h3{font-size:1.25rem;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
+.price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;font-size:1.875rem;font-weight:700;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums lining-nums}
+.price small{font-size:.9375rem;font-weight:500;letter-spacing:0;color:var(--muted)}
+.offer .terms{font-size:.875rem;color:var(--muted);margin-top:6px}
+.offer ul.feat{list-style:none;padding:16px 0 0;margin:16px 0 24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.offer ul.feat li{position:relative;padding-left:26px;font-size:.9375rem;line-height:1.45}
+.offer ul.feat li::before{content:"";position:absolute;left:0;top:.12em;width:16px;height:16px;background:var(--accent);-webkit-mask:var(--check) center/contain no-repeat;mask:var(--check) center/contain no-repeat}
+.offer .btn{margin-top:auto;width:100%}
+.offer.star{border:2px solid var(--gold);background:var(--surface);background-image:var(--gold-grad)}
 .offer.plus{border:2px solid var(--accent)}
-.offer.plus .kind{color:var(--accent)}
-.notes{margin-top:1.75rem;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.4rem 1.5rem}
-.notes h4{margin:0 0 .6rem;font-size:1rem;font-weight:800}
-.notes ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:.45rem;color:var(--muted);font-size:.95rem}
-.hero .far{font-size:.98rem;color:var(--muted)}
-.hero .far a{color:var(--accent);font-weight:700}
+.rates{list-style:none;padding:0;margin:0;font-variant-numeric:tabular-nums lining-nums}
+.rates li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.9375rem;line-height:1.35}
+.rates li:first-child{padding-top:0}
+.rates small{display:block;font-size:.875rem;color:var(--muted);margin-top:2px}
+.rates b{font-size:1.0625rem;font-weight:700;white-space:nowrap}
+.offer .rates+ul.feat{border-top:0;padding-top:0}
+.extra{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.extra div{display:flex;flex-direction:column;gap:2px}
+.extra dt{font-size:.875rem;font-weight:700;line-height:1.4}
+.extra dd{margin:0;font-size:.9375rem;line-height:1.45;color:var(--ink-soft)}
+.extra dd strong{color:var(--ink)}
+.remote{margin-top:40px;padding-top:40px;border-top:1px solid var(--line)}
+.offers.duo{margin-top:0}
+.notes{margin-top:16px;background:var(--sky);border-radius:14px;padding:20px}
+.notes h3{display:flex;align-items:center;gap:10px;font-size:1.0625rem;line-height:1.3;margin-bottom:14px}
+.notes h3::before{content:"";width:20px;height:20px;flex:none;background:var(--accent);-webkit-mask:var(--info) center/contain no-repeat;mask:var(--info) center/contain no-repeat}
+.notes ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.notes li{position:relative;padding-left:18px;font-size:.9375rem;line-height:1.55;color:var(--ink-soft)}
+.notes li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.notes strong{color:var(--ink)}
 
 /* Étapes */
-ol.steps{list-style:none;padding:0;margin:2.5rem 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem;counter-reset:s}
-ol.steps li{counter-increment:s;border-top:3px solid var(--accent);padding-top:1rem;display:flex;flex-direction:column;gap:.4rem;min-width:0}
-ol.steps li::before{content:"Étape " counter(s);font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
-ol.steps p{color:var(--muted);font-size:1rem}
+ol.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:20px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:32px minmax(0,1fr);column-gap:14px;align-items:start}
+ol.steps li::before{content:counter(s);grid-row:1/3;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:.9375rem;font-weight:700;line-height:1}
+ol.steps h3{font-size:1.0625rem;line-height:1.3;margin:5px 0 4px}
+ol.steps p{font-size:.9375rem;line-height:1.55;color:var(--ink-soft)}
 
 /* Avis */
-.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2rem;align-items:start}
-blockquote{margin:0;padding:1.4rem;background:var(--surface);border-radius:14px;border-top:3px solid var(--gold);min-width:0}
-blockquote cite{display:block;margin-top:.9rem;font-style:normal;font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.quotes{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-items:stretch}
+blockquote{margin:0;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:14px;min-width:0;display:flex;flex-direction:column}
+blockquote::before{content:"";width:32px;height:3px;border-radius:2px;margin-bottom:14px;background:var(--accent)}
+blockquote p{font-size:1rem;line-height:1.55}
+blockquote cite{display:block;margin-top:auto;padding-top:14px;font-style:normal;font-size:.875rem;font-weight:600;line-height:1.4;color:var(--accent)}
 
-/* Coach */
-.coach{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:2.5rem;align-items:center}
-.coach img{width:100%;max-width:380px;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:14px;justify-self:center}
+/* Le coach */
+.coach{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:center}
+.coach img{width:100%;max-width:400px;aspect-ratio:4/5;object-fit:cover;border-radius:14px}
+.coach .text p+p{margin-top:12px}
 
-/* FAQ */
-details{border-bottom:1px solid var(--line);padding-block:1rem}
-summary{cursor:pointer;font-weight:700;font-size:1.1rem}
-details p{margin-top:.6rem;color:var(--muted)}
+/* Questions */
+.faq-list{max-width:48rem;display:flex;flex-direction:column;gap:8px}
+details.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 16px}
+details.q summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:14px 0;font-weight:600;font-size:1rem;line-height:1.35;cursor:pointer}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::after{content:"";width:20px;height:20px;flex:none;background:var(--accent);-webkit-mask:var(--chevron) center/contain no-repeat;mask:var(--chevron) center/contain no-repeat;transition:transform .15s}
+details.q[open] summary::after{transform:rotate(180deg)}
+details.q p{padding-bottom:16px;font-size:.9375rem;line-height:1.6;color:var(--ink-soft)}
 
 /* Contact */
-.final .wrap{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
-.contacts{display:flex;gap:.75rem;flex-wrap:wrap}
-.handle{font-family:var(--mono);font-size:.95rem;color:var(--ink);user-select:all}
-footer.legal{border-top:1px solid var(--line);padding-block:2rem;font-size:.9rem;color:var(--muted)}
-footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.final{background:var(--cta-bg);color:var(--cta-ink)}
+.final .inner{max-width:40rem}
+.final h2{color:var(--cta-ink)}
+.final .eyebrow{color:#9CC7EE}
+.final .lead{color:var(--cta-soft);margin-top:12px}
+.contacts{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.btn.light{background:var(--light-btn);border-color:var(--light-btn);color:#12304F}
+.btn.light:hover{background:var(--light-btn-hover);border-color:var(--light-btn-hover)}
+.btn.outline-light{background:transparent;border-color:rgba(255,255,255,.7);color:#FFFFFF}
+.btn.outline-light:hover{background:rgba(255,255,255,.1);border-color:#FFFFFF}
+.final a:focus-visible{outline-color:#FFFFFF}
+.contact-list{list-style:none;margin:24px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.15);display:flex;flex-direction:column;gap:6px;font-size:.9375rem;line-height:1.5;color:var(--cta-soft)}
+.contact-list b{font-weight:600;color:#FFFFFF;user-select:all;overflow-wrap:anywhere}
 
-@media (max-width:860px){
-  .goal-list{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .quotes{grid-template-columns:1fr}
-  .hero .wrap,.two,.coach{grid-template-columns:1fr}
-  .offers,.offers.duo{grid-template-columns:1fr}
-  ol.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
-  section{padding-block:3.25rem}
+/* Pied de page */
+footer.legal{background:var(--surface);border-top:1px solid var(--line);padding:32px 0 calc(40px + env(safe-area-inset-bottom))}
+footer.legal .wrap{display:flex;flex-direction:column;gap:8px}
+.foot-brand{display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--muted)}
+.foot-brand img{width:32px;height:32px}
+.foot-slogan{font-family:var(--serif);font-style:italic;font-weight:600;font-size:1.0625rem;color:var(--ink-soft)}
+
+/* Petits téléphones */
+@media (max-width:374px){
+  h1{font-size:1.6875rem}
+  .brand span{font-size:1.0625rem;letter-spacing:.12em}
+  .brand{gap:8px}
+  .menu-m>summary{padding:0 12px}
 }
-@media (max-width:480px){.goal-list{grid-template-columns:1fr} ol.steps{grid-template-columns:1fr} header.top nav{display:none}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Tablette et plus */
+@media (min-width:600px){
+  .wrap{padding-inline:32px}
+  section{padding-block:64px}
+  h1{font-size:2.5rem}
+  .slogan{font-size:1.3125rem}
+  .lead{font-size:1.125rem}
+  h2{font-size:1.875rem}
+  .head{margin-bottom:32px}
+  .head .lead{margin-top:16px}
+  .brand span{font-size:1.1875rem}
+  .cta,.contacts{flex-direction:row;flex-wrap:wrap}
+  .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;border-top:1px solid var(--line);padding-top:16px}
+  .facts span{display:flex;flex-direction:column;gap:2px;padding:0;border:0}
+  .facts b{font-size:1.25rem}
+  .report{padding:24px;max-width:560px;width:100%}
+  .report td.d{width:72px}
+  .goal-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .offers.duo{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .price{font-size:2rem}
+  .extra{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px}
+  .offer{padding:24px}
+  .notes{padding:24px}
+}
+
+/* Ordinateur */
+@media (min-width:900px){
+  body{font-size:1.0625rem}
+  section{padding-block:88px}
+  header.top .bar{min-height:72px}
+  .brand img{width:44px;height:44px}
+  .brand span{font-size:1.25rem}
+  .menu-m{display:none}
+  .nav-d{display:flex;align-items:center;gap:28px}
+  .nav-d a:not(.btn){color:var(--ink-soft);text-decoration:none;font-weight:600;font-size:.9375rem;padding-block:6px}
+  .nav-d a:not(.btn):hover{color:var(--accent);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+  .nav-d .btn{min-height:40px;padding:8px 18px;font-size:.9375rem}
+  .hero{padding-top:64px}
+  .hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);column-gap:64px;row-gap:48px;align-items:center}
+  .hero-text{grid-column:1;grid-row:1}
+  .report{grid-column:2;grid-row:1;max-width:none}
+  .facts{grid-column:1/-1;grid-row:2}
+  h1{font-size:2.75rem}
+  h1 .kicker{font-size:.8125rem;letter-spacing:.12em}
+  .slogan{font-size:1.375rem}
+  .lead{font-size:1.1875rem}
+  h2{font-size:2.125rem}
+  .eyebrow{font-size:.8125rem}
+  .facts b{font-size:1.375rem}
+  .goals{margin-top:72px}
+  .goals h2{margin-bottom:32px}
+  .goal-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 48px}
+  .goal-list h3{font-size:1.125rem;margin:0 0 6px}
+  .two{grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;align-items:start}
+  .offers{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  .offer{padding:28px}
+  .offer h3{font-size:1.375rem}
+  .price{font-size:2.125rem}
+  .offer ul.feat li{font-size:1rem}
+  .extra{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:24px;padding:20px 24px}
+  .remote{margin-top:64px;padding-top:64px}
+  .notes{padding:28px;margin-top:24px}
+  .notes ul{display:block;columns:2;column-gap:40px}
+  .notes li{break-inside:avoid;margin-bottom:12px;font-size:1rem}
+  ol.steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+  ol.steps li{display:flex;flex-direction:column;gap:6px}
+  ol.steps li::before{margin-bottom:8px}
+  ol.steps h3{font-size:1.125rem;margin:0}
+  .quotes{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  .coach{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px}
+  .coach img{justify-self:start}
+  details.q summary{font-size:1.0625rem}
+  details.q p{font-size:1rem}
+  .contacts{gap:12px}
+  footer.legal .wrap{flex-direction:row;justify-content:space-between;align-items:center}
+}
 </style>
 </head>
 <body>
 
 <header class="top">
-  <div class="wrap">
-    <a class="brand" href="#"><img src="images/logo.png" alt="Logo Pur Coaching" width="46" height="46"><span>PUR COACHING</span></a>
-    <nav aria-label="Menu">
+  <div class="wrap bar">
+    <a class="brand" href="#"><img src="images/logo.png" alt="Logo Pur Coaching" width="44" height="44"><span>Pur Coaching</span></a>
+    <nav class="nav-d" aria-label="Menu">
       <a href="#offres">Formules</a>
       <a href="#distance">À distance</a>
       <a href="#methode">Méthode</a>
       <a href="#avis">Avis</a>
       <a href="#coach">Le coach</a>
       <a href="#faq">Questions</a>
+      <a class="btn" href="#contact">Me contacter</a>
     </nav>
+    <details class="menu-m">
+      <summary><span class="burger" aria-hidden="true"><i></i></span>Menu</summary>
+      <nav class="panel" aria-label="Menu">
+        <a href="#offres">Formules</a>
+        <a href="#distance">À distance</a>
+        <a href="#methode">Méthode</a>
+        <a href="#avis">Avis</a>
+        <a href="#coach">Le coach</a>
+        <a href="#faq">Questions</a>
+        <a class="btn" href="#contact">Me contacter</a>
+      </nav>
+    </details>
   </div>
 </header>
 
 <main>
 <section class="hero">
-  <div class="wrap">
-    <div class="stack">
-      <span class="eyebrow">De la remise en forme au dépassement de soi</span>
-      <h1><span class="kicker">Pur Coaching · coach sportif à Huy</span> Ton corps, mesuré. Ton plan, sur mesure.</h1>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1><span class="kicker">Pur Coaching&nbsp;· coach sportif à&nbsp;Huy</span> <span class="l">Ton corps, mesuré.</span> <span class="l">Ton plan, sur mesure.</span></h1>
+      <p class="slogan">De la remise en forme au dépassement de soi</p>
       <p class="lead">Avant de te faire transpirer, je mesure où tu en es avec une analyse de composition corporelle Tanita. Ensuite je construis un plan d'entraînement fait pour toi, et on suit tes progrès en chiffres, pas au hasard.</p>
       <div class="cta">
         <a class="btn" href="#offres">Voir les formules</a>
         <a class="btn ghost" href="#contact">Me contacter</a>
       </div>
-      <p class="far">Tu n'habites pas près de Huy ? <a href="#distance">Découvre le coaching à distance</a></p>
-      <div class="facts">
-        <span><b>Tanita</b>analyse corporelle 8 électrodes</span>
-        <span><b>100&nbsp;%</b>plans personnalisés</span>
-        <span><b>Marathon</b>de Paris : clientes préparées</span>
-      </div>
+      <p class="far">Tu n'habites pas près de Huy&nbsp;? <a href="#distance">Découvre le coaching à&nbsp;distance</a></p>
     </div>
-
+    <div class="facts">
+      <span><b>Tanita</b>analyse corporelle 8&nbsp;électrodes</span>
+      <span><b>100&nbsp;%</b>plans personnalisés</span>
+      <span><b>Marathon</b>de Paris&nbsp;: clientes préparées</span>
+    </div>
     <article class="report" aria-label="Exemple de rapport Tanita">
-      <header><strong>Rapport Tanita RD-545 HR</strong><span class="tag">Exemple</span></header>
-      <div class="table-scroll">
-        <table>
-          <tbody>
-            <tr><td>Masse grasse</td><td class="n">24,1 %</td><td class="d">−2,3 pts</td></tr>
-            <tr><td>Masse musculaire</td><td class="n">58,4 kg</td><td class="d">+1,6 kg</td></tr>
-            <tr><td>Eau corporelle</td><td class="n">53,2 %</td><td class="d">+1,1 pts</td></tr>
-            <tr><td>Graisse viscérale</td><td class="n">7</td><td class="d">−1</td></tr>
-            <tr><td>Métabolisme de base</td><td class="n">1 742 kcal</td><td class="d">+38</td></tr>
-            <tr><td>Âge métabolique</td><td class="n">29 ans</td><td class="d">−3</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <footer>Chiffres d'exemple, comparés à l'analyse précédente. Avec PUR HEALTH et PUR GOLD, tu reçois ton propre rapport en PDF avec mes recommandations.</footer>
+      <header><strong>Rapport Tanita <span class="nw">RD-545 HR</span></strong><span class="tag">Exemple</span></header>
+      <table>
+        <tbody>
+          <tr><td>Masse grasse</td><td class="n">24,1&nbsp;%</td><td class="d">−2,3&nbsp;pts</td></tr>
+          <tr><td>Masse musculaire</td><td class="n">58,4&nbsp;kg</td><td class="d">+1,6&nbsp;kg</td></tr>
+          <tr><td>Eau corporelle</td><td class="n">53,2&nbsp;%</td><td class="d">+1,1&nbsp;pts</td></tr>
+          <tr><td>Graisse viscérale</td><td class="n">7</td><td class="d">−1</td></tr>
+          <tr><td>Métabolisme de base</td><td class="n">1&nbsp;742&nbsp;kcal</td><td class="d">+38</td></tr>
+          <tr><td>Âge métabolique</td><td class="n">29&nbsp;ans</td><td class="d">−3</td></tr>
+        </tbody>
+      </table>
+      <footer>Chiffres d'exemple, comparés à l'analyse précédente. Avec <span class="nw">PUR HEALTH</span> et <span class="nw">PUR GOLD</span>, tu reçois ton propre rapport en PDF avec mes recommandations.</footer>
     </article>
   </div>
   <div class="wrap goals">
@@ -287,13 +464,13 @@ footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap
 
 <section class="band">
   <div class="wrap two">
-    <div class="stack">
+    <div class="head">
       <span class="eyebrow">Pourquoi Pur Coaching</span>
       <h2>Les programmes tout faits ne tiennent pas</h2>
       <p class="lead">Trop durs, trop longs ou pas adaptés à ton corps. On se blesse, on se décourage et on arrête au bout de trois semaines. Ici, tout part de toi.</p>
     </div>
     <ul class="check">
-      <li>Une anamnèse complète : ton passé sportif, ta santé, ton rythme de vie et ton objectif.</li>
+      <li>Une anamnèse complète&nbsp;: ton passé sportif, ta santé, ton rythme de vie et ton objectif.</li>
       <li>Une analyse Tanita pour connaître ta masse grasse, ta masse musculaire et ton hydratation.</li>
       <li>Un plan d'entraînement personnalisé, avec une progression semaine par semaine.</li>
       <li>Des mesures régulières pour voir tes progrès et ajuster le plan.</li>
@@ -303,7 +480,7 @@ footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap
 
 <section id="offres">
   <div class="wrap">
-    <div class="stack">
+    <div class="head">
       <span class="eyebrow">Formules</span>
       <h2>Choisis ta formule</h2>
     </div>
@@ -311,98 +488,98 @@ footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap
       <article class="offer">
         <span class="kind">Pour démarrer</span>
         <h3>PUR HEALTH</h3>
-        <div class="price">70 € <small>une fois</small></div>
-        <ul>
-          <li>Analyse Tanita RD-545 HR</li>
+        <div class="price">70&nbsp;€ <small>une fois</small></div>
+        <ul class="feat">
+          <li>Analyse Tanita <span class="nw">RD-545 HR</span></li>
           <li>Rapport PDF détaillé + recommandations</li>
           <li>Anamnèse complète</li>
           <li>Plan d'entraînement personnalisé</li>
         </ul>
-        <a class="btn ghost" href="#contact">Réserver PUR HEALTH</a>
+        <a class="btn ghost" href="#contact">Réserver PUR&nbsp;HEALTH</a>
       </article>
       <article class="offer star">
-        <span class="kind">★ La plus populaire</span>
+        <span class="kind badge">★ La plus populaire</span>
         <h3>PUR GOLD</h3>
-        <div class="price">150 € <small>/ mois</small></div>
-        <ul>
+        <div class="price">150&nbsp;€ <small>/ mois</small></div>
+        <ul class="feat">
           <li>Analyse Tanita chaque mois</li>
           <li>Rapport PDF détaillé après chaque analyse</li>
           <li>Test VMA et tests physiques</li>
-          <li><strong>Plan d'entraînement 100&nbsp;% personnalisé sur 3 mois</strong></li>
+          <li><strong>Plan d'entraînement 100&nbsp;% personnalisé sur 3&nbsp;mois</strong></li>
           <li>Conseils nutritionnels adaptés à ton objectif</li>
-          <li><strong>2 séances d'accompagnement pratiques par mois</strong></li>
+          <li><strong>2&nbsp;séances d'accompagnement pratiques par mois</strong></li>
         </ul>
-        <a class="btn gold" href="#contact">Réserver PUR GOLD</a>
+        <a class="btn gold" href="#contact">Réserver PUR&nbsp;GOLD</a>
       </article>
       <article class="offer">
-        <span class="kind">En présentiel à Huy</span>
+        <span class="kind">En présentiel à&nbsp;Huy</span>
         <h3>PUR TRACK</h3>
-        <ul>
-          <li>Accompagnement en présentiel à Huy</li>
+        <ul class="rates">
+          <li><span>1&nbsp;séance de 1&nbsp;h&nbsp;30</span><b>35&nbsp;€</b></li>
+          <li><span>12&nbsp;séances <small>(25&nbsp;€/séance)</small></span><b>300&nbsp;€</b></li>
+          <li><span>36&nbsp;séances <small>(20,83&nbsp;€/séance)</small></span><b>750&nbsp;€</b></li>
+        </ul>
+        <ul class="feat">
+          <li>Accompagnement en présentiel à&nbsp;Huy</li>
           <li>Plan alimentaire de base</li>
           <li>Analyse Tanita en début et en fin de suivi</li>
         </ul>
-        <ul class="rates">
-          <li><span>1 séance de 1 h 30</span><b>35 €</b></li>
-          <li><span>12 séances (25 €/séance)</span><b>300 €</b></li>
-          <li><span>36 séances (20,83 €/séance)</span><b>750 €</b></li>
-        </ul>
-        <a class="btn ghost" href="#contact">Réserver PUR TRACK</a>
+        <a class="btn ghost" href="#contact">Réserver PUR&nbsp;TRACK</a>
       </article>
     </div>
-    <div class="extra">
-      <span><b>Analyse Tanita seule :</b> 15 €</span>
-      <span><b>Lieu :</b> Huy en présentiel, partout à distance</span>
-      <span><b>Horaires :</b> variables selon mes disponibilités, on fixe ensemble</span>
-      <span><b>Paiement :</b> par virement, ou en liquide pour le présentiel</span>
-    </div>
+    <dl class="extra">
+      <div><dt>Analyse Tanita seule</dt><dd><strong>15&nbsp;€</strong></dd></div>
+      <div><dt>Lieu</dt><dd>Huy en présentiel, partout à distance</dd></div>
+      <div><dt>Horaires</dt><dd>Variables selon mes disponibilités, on fixe ensemble</dd></div>
+      <div><dt>Paiement</dt><dd>Par virement, ou en liquide pour le présentiel</dd></div>
+    </dl>
 
     <div class="remote" id="distance">
-      <div class="stack">
+      <div class="head">
         <span class="eyebrow">100&nbsp;% à distance</span>
-        <h3 class="remote-title">Tu n'habites pas près de Huy&nbsp;?</h3>
-        <p class="lead">Je te coache à distance, ailleurs en Belgique, en France ou dans un autre pays : bilan en visio, plan sur mesure, bilan chaque semaine et correction de ta technique en vidéo.</p>
+        <h2>Tu n'habites pas près de Huy&nbsp;?</h2>
+        <p class="lead">Je te coache à distance, ailleurs en Belgique, en France ou dans un autre pays&nbsp;: bilan en visio, plan sur mesure, bilan chaque semaine et correction de ta technique en vidéo.</p>
       </div>
       <div class="offers duo">
         <article class="offer">
           <span class="kind">À distance · en autonomie</span>
           <h3>PUR ONLINE</h3>
-          <div class="price">69 € <small>/ mois</small></div>
-          <p class="terms">3 mois minimum, puis mois par mois</p>
-          <ul>
+          <div class="price">69&nbsp;€ <small>/ mois</small></div>
+          <p class="terms">3&nbsp;mois minimum, puis mois par mois</p>
+          <ul class="feat">
             <li>Bilan santé et appel vidéo gratuit avant de commencer</li>
-            <li>Plan 100&nbsp;% personnalisé, ajusté toutes les 4 semaines</li>
-            <li>Ton bilan chaque semaine, ma réponse sous 48 h en semaine</li>
+            <li>Plan 100&nbsp;% personnalisé, ajusté toutes les 4&nbsp;semaines</li>
+            <li>Ton bilan chaque semaine, ma réponse sous 48&nbsp;h en semaine</li>
             <li>Correction de ta technique en vidéo</li>
-            <li>1 visio de suivi par mois + tes questions sur WhatsApp</li>
-            <li>Tests de forme maison toutes les 4 semaines</li>
+            <li>1&nbsp;visio de suivi par mois + tes questions sur WhatsApp</li>
+            <li>Tests de forme maison toutes les 4&nbsp;semaines</li>
           </ul>
-          <a class="btn ghost" href="#contact">Réserver PUR ONLINE</a>
+          <a class="btn ghost" href="#contact">Réserver PUR&nbsp;ONLINE</a>
         </article>
         <article class="offer plus">
           <span class="kind">À distance · suivi renforcé</span>
           <h3>PUR ONLINE+</h3>
-          <div class="price">109 € <small>/ mois</small></div>
-          <p class="terms">3 mois minimum, puis mois par mois</p>
-          <ul>
-            <li>Tout PUR ONLINE, avec un suivi plus serré</li>
+          <div class="price">109&nbsp;€ <small>/ mois</small></div>
+          <p class="terms">3&nbsp;mois minimum, puis mois par mois</p>
+          <ul class="feat">
+            <li>Tout <span class="nw">PUR ONLINE</span>, avec un suivi plus serré</li>
             <li><strong>Plan ajusté chaque semaine selon ton bilan</strong></li>
-            <li>Ma réponse sous 24 h en semaine, par écrit ou en vocal</li>
-            <li><strong>2 visios par mois, dont 1 séance de technique en direct</strong></li>
-            <li>Jusqu'à 2 vidéos de technique corrigées par semaine</li>
-            <li>Semi ou marathon : allures et stratégie de course</li>
+            <li>Ma réponse sous 24&nbsp;h en semaine, par écrit ou en vocal</li>
+            <li><strong>2&nbsp;visios par mois, dont 1&nbsp;séance de technique en direct</strong></li>
+            <li>Jusqu'à 2&nbsp;vidéos de technique corrigées par semaine</li>
+            <li>Semi ou marathon&nbsp;: allures et stratégie de course</li>
           </ul>
-          <a class="btn" href="#contact">Réserver PUR ONLINE+</a>
+          <a class="btn" href="#contact">Réserver PUR&nbsp;ONLINE+</a>
         </article>
       </div>
       <div class="notes">
-        <h4>Bon à savoir avant de choisir</h4>
+        <h3>Bon à savoir avant de choisir</h3>
         <ul>
-          <li>Avant de commencer : questionnaire santé et appel vidéo de bilan. Tu paies seulement ensuite, par virement, avant chaque mois de suivi.</li>
-          <li>Pas de Tanita à distance : on suit des mesures simples que tu prends chez toi. Si tu passes par Huy, tu peux ajouter une analyse Tanita (15 €) ou une séance sur place (35 €).</li>
-          <li>Tu dois pouvoir faire une visio et filmer tes exercices avec ton téléphone. Rien de payant : WhatsApp, Google Meet et un carnet en ligne gratuits, avec un compte Google gratuit.</li>
-          <li>Pas adapté si tu es enceinte ou mineur, si tu as une maladie du cœur, un pacemaker ou un défibrillateur, si tu fais des malaises à l'effort, si tu as une maladie non stabilisée qui peut te faire perdre connaissance, ou une douleur vive ou une blessure récente ou en cours de soin. Tension traitée, accouchement il y a moins d'un an, maladie chronique, plus de 65 ans sans activité : il faut d'abord l'accord écrit de ton médecin (ou de ta sage-femme après un accouchement).</li>
-          <li>Ce coaching ne remplace pas un avis médical. En cas d'urgence, appelle le 112 (ou le numéro d'urgence de ton pays), pas ton coach. Je réponds du lundi au vendredi, et je te préviens à l'avance si mes délais changent pendant mes examens.</li>
+          <li>Avant de commencer&nbsp;: questionnaire santé et appel vidéo de bilan. Tu paies seulement ensuite, par virement, avant chaque mois de suivi.</li>
+          <li>Pas de Tanita à distance&nbsp;: on suit des mesures simples que tu prends chez toi. Si tu passes par Huy, tu peux ajouter une analyse Tanita (15&nbsp;€) ou une séance sur place (35&nbsp;€).</li>
+          <li>Tu dois pouvoir faire une visio et filmer tes exercices avec ton téléphone. Rien de payant&nbsp;: WhatsApp, Google Meet et un carnet en ligne gratuits, avec un compte Google gratuit.</li>
+          <li><strong>Pas adapté si</strong> tu es enceinte ou mineur, si tu as une maladie du cœur, un pacemaker ou un défibrillateur, si tu fais des malaises à l'effort, si tu as une maladie non stabilisée qui peut te faire perdre connaissance, ou une douleur vive ou une blessure récente ou en cours de soin. Tension traitée, accouchement il y a moins d'un an, maladie chronique, plus de 65&nbsp;ans sans activité&nbsp;: il faut d'abord l'accord écrit de ton médecin (ou de ta <span class="nw">sage-femme</span> après un accouchement).</li>
+          <li>Ce coaching ne remplace pas un avis médical. <strong>En cas d'urgence, appelle le&nbsp;112</strong> (ou le numéro d'urgence de ton pays), pas ton coach. Je réponds du lundi au vendredi, et je te préviens à l'avance si mes délais changent pendant mes examens.</li>
         </ul>
       </div>
     </div>
@@ -411,22 +588,22 @@ footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap
 
 <section id="methode" class="band">
   <div class="wrap">
-    <div class="stack">
+    <div class="head">
       <span class="eyebrow">Méthode</span>
       <h2>Comment ça se passe</h2>
     </div>
     <ol class="steps">
-      <li><h3>Tu m'écris</h3><p>Sur WhatsApp, Instagram ou par e-mail, avec ton objectif et la formule qui t'intéresse.</p></li>
-      <li><h3>On fait le bilan</h3><p>Anamnèse complète, puis analyse Tanita à Huy, ou appel vidéo de bilan si tu es à distance.</p></li>
+      <li><h3>Tu m'écris</h3><p>Sur WhatsApp, Instagram ou par <span class="nw">e-mail</span>, avec ton objectif et la formule qui t'intéresse.</p></li>
+      <li><h3>On fait le bilan</h3><p>Anamnèse complète, puis analyse Tanita à&nbsp;Huy, ou appel vidéo de bilan si tu es à distance.</p></li>
       <li><h3>Tu reçois ton plan</h3><p>Un entraînement construit pour toi, avec chaque exercice expliqué.</p></li>
-      <li><h3>On mesure et on ajuste</h3><p>Nouvelles mesures, nouveaux objectifs : ton plan évolue avec toi.</p></li>
+      <li><h3>On mesure et on ajuste</h3><p>Nouvelles mesures, nouveaux objectifs&nbsp;: ton plan évolue avec toi.</p></li>
     </ol>
   </div>
 </section>
 
 <section id="securite">
   <div class="wrap two">
-    <div class="stack">
+    <div class="head">
       <span class="eyebrow">Sécurité</span>
       <h2>Progresser sans se blesser</h2>
       <p class="lead">Ta santé passe avant le chrono ou la balance.</p>
@@ -436,68 +613,73 @@ footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap
       <li>Échauffement et retour au calme dans chaque séance.</li>
       <li>Charge augmentée par petites étapes, jamais d'un coup.</li>
       <li>Des semaines plus légères prévues pour bien récupérer.</li>
-      <li>Une règle simple : une douleur vive ou inhabituelle, on arrête et on en parle.</li>
+      <li>Une règle simple&nbsp;: une douleur vive ou inhabituelle, on arrête et on en parle.</li>
     </ul>
   </div>
 </section>
 
 <section id="avis" class="band">
   <div class="wrap">
-    <div class="stack">
+    <div class="head">
       <span class="eyebrow">Avis</span>
       <h2>Ils l'ont fait</h2>
     </div>
     <div class="quotes">
-      <blockquote><p>« Je ne sais pas si tu mesures à quel point tout ce qui s'est passé aujourd'hui, c'est grâce à toi. Tu nous as tellement bien préparées… Rien à voir avec mon premier marathon. Les sensations, le souffle, tout était tellement différent. »</p><cite>Lucie · Marathon de Paris</cite></blockquote>
-      <blockquote><p>« Merci beaucoup Simon, c'est grâce à toi. Sur la vraie distance du marathon, je suis en dessous de 4 h 59. »</p><cite>Véronique · Marathon de Paris</cite></blockquote>
-      <blockquote><p>« J'ai bien fait de te prendre comme coach. Je vois que je progresse bien, même au niveau de mon corps : je commence à kiffer comment il évolue. »</p><cite>Elion · Renforcement musculaire</cite></blockquote>
+      <blockquote><p>«&nbsp;Je ne sais pas si tu mesures à quel point tout ce qui s'est passé aujourd'hui, c'est grâce à toi. Tu nous as tellement bien préparées… Rien à voir avec mon premier marathon. Les sensations, le souffle, tout était tellement différent.&nbsp;»</p><cite>Lucie · Marathon de Paris</cite></blockquote>
+      <blockquote><p>«&nbsp;Merci beaucoup Simon, c'est grâce à toi. Sur la vraie distance du marathon, je suis en dessous de 4&nbsp;h&nbsp;59.&nbsp;»</p><cite>Véronique · Marathon de Paris</cite></blockquote>
+      <blockquote><p>«&nbsp;J'ai bien fait de te prendre comme coach. Je vois que je progresse bien, même au niveau de mon corps&nbsp;: je commence à kiffer comment il évolue.&nbsp;»</p><cite>Elion · Renforcement musculaire</cite></blockquote>
     </div>
   </div>
 </section>
 
 <section id="coach">
   <div class="wrap coach">
-    <img src="images/simon.jpg" alt="Simon, coach sportif Pur Coaching à Huy" width="900" height="1200" loading="lazy">
-    <div class="stack">
+    <img src="images/simon-portrait.jpg" alt="Simon, coach sportif Pur Coaching à Huy" width="552" height="690" loading="lazy">
+    <div class="text">
       <span class="eyebrow">Le coach</span>
       <h2>Moi, c'est Simon</h2>
-      <p>Coach sportif à Huy, je suis étudiant en 3<sup>e</sup> année de bachelier en coaching sportif à la HEPL. J'ai créé Pur Coaching pour accompagner chacun, de la simple remise en forme jusqu'au dépassement de soi.</p>
-      <p>Ma méthode : mesurer avant d'agir, expliquer chaque exercice et adapter le plan à ta vraie vie.</p>
+      <p style="margin-top:16px">Coach sportif à Huy, je suis étudiant en 3<sup>e</sup>&nbsp;année de bachelier en coaching sportif à la HEPL. J'ai créé Pur Coaching pour accompagner chacun, de la simple remise en forme jusqu'au dépassement de soi.</p>
+      <p>Ma méthode&nbsp;: mesurer avant d'agir, expliquer chaque exercice et adapter le plan à ta vraie vie.</p>
     </div>
   </div>
 </section>
 
-<section id="faq">
+<section id="faq" class="band">
   <div class="wrap">
-    <div class="stack">
+    <div class="head">
       <span class="eyebrow">Questions</span>
       <h2>Questions fréquentes</h2>
     </div>
-    <div style="margin-top:1.5rem">
-      <details><summary>C'est quoi, une analyse Tanita ?</summary><p>C'est une balance Tanita à 8 électrodes (modèle RD-545 HR) qui estime ta composition corporelle en quelques secondes : masse grasse, masse musculaire, eau, graisse viscérale et métabolisme. C'est indolore, et bien plus parlant que le poids seul. Elle n'est pas faite pour les personnes qui ont un pacemaker ou un autre implant électronique, ni pendant la grossesse : dis-le-moi avant l'analyse.</p></details>
-      <details><summary>Je suis débutant, c'est pour moi ?</summary><p>Oui. Le plan part de ton niveau réel, même si tu n'as jamais fait de sport.</p></details>
-      <details><summary>Quelle formule choisir ?</summary><p>PUR HEALTH pour un bilan et un plan à suivre seul. PUR GOLD pour un suivi complet sur plusieurs mois. PUR TRACK si tu veux t'entraîner avec moi en présentiel. Tu habites loin de Huy ? PUR ONLINE ou PUR ONLINE+, tout à distance.</p></details>
-      <details><summary>Où ont lieu les séances ?</summary><p>Les séances en présentiel et les analyses Tanita ont lieu à Huy. Entre deux rendez-vous, on garde le contact par WhatsApp, Instagram ou e-mail. Avec PUR ONLINE et PUR ONLINE+, tout se fait à distance : visios, WhatsApp et e-mail.</p></details>
-      <details><summary>J'habite loin de Huy, ou à l'étranger : c'est possible ?</summary><p>Oui. Avec PUR ONLINE ou PUR ONLINE+, tout se fait à distance : un appel vidéo de bilan, ton plan dans un carnet en ligne, ton bilan chaque semaine, WhatsApp et des visios. Pas besoin de montre : ton téléphone suffit. Pas de Tanita à distance : on suit des mesures simples que tu prends chez toi. Si tu passes un jour par Huy, tu peux ajouter une analyse Tanita (15 €).</p></details>
-      <details><summary>Sans me voir, comment tu sais si je fais bien ?</summary><p>Au départ, on vérifie tes exercices ensemble en visio. Ensuite, tu m'envoies une courte vidéo de chaque nouvel exercice, et je te réponds avec une correction précise. Tu augmentes une charge seulement quand j'ai validé ta vidéo. Ton bilan de la semaine et ton carnet me disent le reste.</p></details>
-      <details><summary>PUR ONLINE ou PUR ONLINE+ : laquelle choisir ?</summary><p>PUR ONLINE si tu es plutôt autonome : ton plan évolue toutes les 4 semaines, je réponds à ton bilan sous 48 h en semaine, et on fait une visio par mois. PUR ONLINE+ si tu veux un suivi de près, ou si tu prépares un semi ou un marathon : plan ajusté chaque semaine, réponse sous 24 h et 2 visios par mois. Les deux durent 3 mois au départ, puis tu continues mois par mois si tu veux.</p></details>
-      <details><summary>Comment je paie ?</summary><p>Par virement bancaire, ou en liquide pour les séances en présentiel. À distance, par virement avant chaque mois de suivi, seulement après ton bilan santé.</p></details>
-      <details><summary>Quels sont les horaires ?</summary><p>Ils varient selon mes disponibilités. Écris-moi et on trouve un créneau ensemble.</p></details>
+    <div class="faq-list">
+      <details class="q"><summary>C'est quoi, une analyse Tanita&nbsp;?</summary><p>C'est une balance Tanita à 8&nbsp;électrodes (modèle <span class="nw">RD-545 HR</span>) qui estime ta composition corporelle en quelques secondes&nbsp;: masse grasse, masse musculaire, eau, graisse viscérale et métabolisme. C'est indolore, et bien plus parlant que le poids seul. Elle n'est pas faite pour les personnes qui ont un pacemaker ou un autre implant électronique, ni pendant la grossesse&nbsp;: <span class="nw">dis-le-moi</span> avant l'analyse.</p></details>
+      <details class="q"><summary>Je suis débutant, c'est pour moi&nbsp;?</summary><p>Oui. Le plan part de ton niveau réel, même si tu n'as jamais fait de sport.</p></details>
+      <details class="q"><summary>Quelle formule choisir&nbsp;?</summary><p><span class="nw">PUR HEALTH</span> pour un bilan et un plan à suivre seul. <span class="nw">PUR GOLD</span> pour un suivi complet sur plusieurs mois. <span class="nw">PUR TRACK</span> si tu veux t'entraîner avec moi en présentiel. Tu habites loin de Huy&nbsp;? <span class="nw">PUR ONLINE</span> ou <span class="nw">PUR ONLINE+</span>, tout à distance.</p></details>
+      <details class="q"><summary>Où ont lieu les séances&nbsp;?</summary><p>Les séances en présentiel et les analyses Tanita ont lieu à Huy. Entre deux <span class="nw">rendez-vous</span>, on garde le contact par WhatsApp, Instagram ou <span class="nw">e-mail</span>. Avec <span class="nw">PUR ONLINE</span> et <span class="nw">PUR ONLINE+</span>, tout se fait à distance&nbsp;: visios, WhatsApp et <span class="nw">e-mail</span>.</p></details>
+      <details class="q"><summary>J'habite loin de Huy, ou à l'étranger&nbsp;: c'est possible&nbsp;?</summary><p>Oui. Avec <span class="nw">PUR ONLINE</span> ou <span class="nw">PUR ONLINE+</span>, tout se fait à distance&nbsp;: un appel vidéo de bilan, ton plan dans un carnet en ligne, ton bilan chaque semaine, WhatsApp et des visios. Pas besoin de montre&nbsp;: ton téléphone suffit. Pas de Tanita à distance&nbsp;: on suit des mesures simples que tu prends chez toi. Si tu passes un jour par Huy, tu peux ajouter une analyse Tanita (15&nbsp;€).</p></details>
+      <details class="q"><summary>Sans me voir, comment tu sais si je fais bien&nbsp;?</summary><p>Au départ, on vérifie tes exercices ensemble en visio. Ensuite, tu m'envoies une courte vidéo de chaque nouvel exercice, et je te réponds avec une correction précise. Tu augmentes une charge seulement quand j'ai validé ta vidéo. Ton bilan de la semaine et ton carnet me disent le reste.</p></details>
+      <details class="q"><summary><span><span class="nw">PUR ONLINE</span> ou <span class="nw">PUR ONLINE+</span>&nbsp;: laquelle choisir&nbsp;?</span></summary><p><span class="nw">PUR ONLINE</span> si tu es plutôt autonome&nbsp;: ton plan évolue toutes les 4&nbsp;semaines, je réponds à ton bilan sous 48&nbsp;h en semaine, et on fait une visio par mois. <span class="nw">PUR ONLINE+</span> si tu veux un suivi de près, ou si tu prépares un semi ou un marathon&nbsp;: plan ajusté chaque semaine, réponse sous 24&nbsp;h et 2&nbsp;visios par mois. Les deux durent 3&nbsp;mois au départ, puis tu continues mois par mois si tu veux.</p></details>
+      <details class="q"><summary>Comment je paie&nbsp;?</summary><p>Par virement bancaire, ou en liquide pour les séances en présentiel. À distance, par virement avant chaque mois de suivi, seulement après ton bilan santé.</p></details>
+      <details class="q"><summary>Quels sont les horaires&nbsp;?</summary><p>Ils varient selon mes disponibilités. <span class="nw">Écris-moi</span> et on trouve un créneau ensemble.</p></details>
     </div>
   </div>
 </section>
 
-<section id="contact" class="final band">
+<section id="contact" class="final">
   <div class="wrap">
-    <div class="stack">
-      <h2>Prêt à commencer ?</h2>
-      <p class="lead">Écris-moi avec ton objectif et la formule qui t'intéresse.</p>
-      <p>WhatsApp : <span class="handle">+32 491 63 39 35</span> · Instagram : <span class="handle">@simon_ruisseau</span> · E-mail : <span class="handle">rui.seau.13@gmail.com</span></p>
-    </div>
-    <div class="contacts">
-      <a class="btn" href="https://wa.me/32491633935?text=Bonjour%20Simon%2C%20je%20viens%20de%20ton%20site%20Pur%20Coaching.%20Mon%20objectif%20%3A%20" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="btn ghost" href="https://www.instagram.com/simon_ruisseau/" target="_blank" rel="noopener">Instagram</a>
-      <a class="btn ghost" href="mailto:rui.seau.13@gmail.com?subject=Pur%20Coaching">E-mail</a>
+    <div class="inner">
+      <span class="eyebrow">Contact</span>
+      <h2>Prêt à commencer&nbsp;?</h2>
+      <p class="lead"><span class="nw">Écris-moi</span> avec ton objectif et la formule qui t'intéresse.</p>
+      <div class="contacts">
+        <a class="btn light" href="https://wa.me/32491633935?text=BILAN.%20Bonjour%20Simon%2C%20je%20viens%20de%20ton%20site%20Pur%20Coaching.%20Mon%20objectif%20%3A%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.31-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"/></svg>WhatsApp</a>
+        <a class="btn outline-light" href="https://www.instagram.com/simon_ruisseau/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>Instagram</a>
+        <a class="btn outline-light" href="mailto:rui.seau.13@gmail.com?subject=Pur%20Coaching"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>E-mail</a>
+      </div>
+      <ul class="contact-list">
+        <li>WhatsApp&nbsp;: <b class="nw">+32 491 63 39 35</b></li>
+        <li>Instagram&nbsp;: <b>@simon_ruisseau</b></li>
+        <li><span class="nw">E-mail</span>&nbsp;: <b>rui.seau.13@gmail.com</b></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -505,9 +687,10 @@ footer.legal .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap
 
 <footer class="legal">
   <div class="wrap">
-    <span>© 2026 Pur Coaching · Simon · Huy</span>
-    <span>De la remise en forme au dépassement de soi</span>
+    <span class="foot-brand"><img src="images/logo.png" alt="" width="32" height="32" loading="lazy">© 2026 Pur Coaching · Simon · Huy</span>
+    <span class="foot-slogan">De la remise en forme au dépassement de soi</span>
   </div>
 </footer>
+<script>document.querySelectorAll('.menu-m a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').removeAttribute('open')})})</script>
 </body>
 </html>

@@ -1,0 +1,3 @@
+Polices Montserrat et Cormorant Garamond, hébergées sur le site.
+Licence : SIL Open Font License 1.1 (https://openfontlicense.org), libre et gratuite.
+Source : Google Fonts.
